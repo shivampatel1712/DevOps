@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Love Coffee</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f3e5ab;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #6f4e37;
+        }
+        .coffee-container {
+            margin-top: 20px;
+        }
+        img {
+            width: 200px;
+            transition: transform 0.3s;
+        }
+        img:hover {
+            transform: scale(1.1);
+        }
+        button {
+            background-color: #6f4e37;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #56382d;
+        }
+    </style>
+</head>
+<body>
+    <h1>I Love Coffee</h1>
+    <p>Click the button to change the coffee cup!</p>
+    <div class="coffee-container">
+        <img id="coffeeImage" src="https://i.imgur.com/Y0T8F3a.png" alt="Coffee Cup">
+    </div>
+    <button onclick="changeCoffee()">Change Coffee</button>
+
+    <script>
+        function changeCoffee() {
+            const coffeeImages = [
+                "https://i.imgur.com/Y0T8F3a.png",
+                "https://i.imgur.com/7y3ChwM.png",
+                "https://i.imgur.com/qR8uREx.png"
+            ];
+            const imgElement = document.getElementById("coffeeImage");
+            const randomIndex = Math.floor(Math.random() * coffeeImages.length);
+            imgElement.src = coffeeImages[randomIndex];
+        }
+    </script>
+</body>
+</html>
